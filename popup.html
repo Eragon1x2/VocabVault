@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popup</title>
+  <link rel="stylesheet" href="popup.css">
+  <style>
+    body {
+      width: 600px;  /* Установите желаемую ширину */
+      height: 200px; /* Установите желаемую высоту */
+      background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+    h1 {
+      color: rgb(0, 136, 91);
+    }
+  </style>
+</head>
+<body>
+  <h1>Words List</h1>
+  <input type="text" id="input">
+  <button id="myButton">Add item</button>
+  <ul id="list"></ul>
+</body>
+<script src="popup.js" type="module"></script>
+</html>
