@@ -1,7 +1,7 @@
 const input = document.querySelector('#input');
 const sumbit = document.querySelector('#myButton');
 const myList = document.querySelector('#list');
-
+const formSubmit = document.querySelector('#form');
 let list = localStorage.getItem('items') !== null ? JSON.parse(localStorage.getItem('items')) : [];
 let value = '';
 function renderList() {
@@ -12,11 +12,12 @@ function renderList() {
 list.forEach(itemText => {
       const newItem = document.createElement('li');
       const deleteItemBth = document.createElement('button');
-      deleteItemBth.textContent = 'Delete word';
-      deleteItemBth.onclick = () => deleteItem(itemText.id);
+      // deleteItemBth.textContent = 'Delete word';
+      // deleteItemBth.onclick = () => deleteItem(itemText.id);
+      newItem.onclick = () => deleteItem(itemText.id);
       newItem.textContent = itemText.text;
       newItem.id = itemText.id;
-      newItem.appendChild(deleteItemBth);
+      // newItem.appendChild(deleteItemBth);
       myList.appendChild(newItem);
   });
 }
@@ -42,5 +43,5 @@ input.addEventListener('change', (e) => {
   value = e.currentTarget.value;
 })
 
-sumbit.addEventListener('click', addItem)
+formSubmit.addEventListener('submit', addItem)
 window.onload = renderList;
